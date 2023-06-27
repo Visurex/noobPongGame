@@ -2,8 +2,6 @@ import Brick from "./brick.js";
 
 export default class Game {
     constructor(WIDTH, HEIGHT,ball,pad,pad2) {
-        this.canvas = document.getElementById('canvas');
-        this.ctx = canvas.getContext('2d');
         this.gameWidth = WIDTH;
         this.gameHeight = HEIGHT;
         this.ball = ball;
@@ -102,7 +100,7 @@ export default class Game {
         this.updatePad2();
         this.drawText();
         this.bricksWall();
-        this.newArray.forEach((element, index) => {
+        this.newArray.forEach((element) => {
             // collision with bricks
             if(    this.ball.pos.x >= element.pos.x 
                 && this.ball.pos.x - this.ball.width/2 <= element.pos.x + element.width
@@ -110,7 +108,7 @@ export default class Game {
                 && this.ball.pos.y <= element.pos.y + element.height ) 
             {
                 this.ball.speed.x -= this.ball.speed.x * 2;
-                this.newArray.pop(index)
+                this.newArray.pop()
             };
         });
     };

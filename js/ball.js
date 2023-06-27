@@ -10,11 +10,7 @@ export default class Ball {
         this.speed = {x: 5, y: 1}
         this.pos = {x: this.gameWidth /4, y: this.gameHeight /2 }
     };
-
-    update() {
-        let newImage =this.image.getBoundingClientRect()
-        console.log(newImage)
-    };
+    
     draw() {
         this.ctx.drawImage(this.image,this.pos.x,this.pos.y,this.width,this.height);
     };

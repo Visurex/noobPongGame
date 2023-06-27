@@ -16,6 +16,4 @@ export default class Brick {
     init() {
         this.draw();
     };
-
-
 };
